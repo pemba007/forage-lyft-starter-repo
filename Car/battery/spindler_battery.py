@@ -1,4 +1,4 @@
-from battery import Battery
+from .battery import Battery
 from datetime import date
 
 class SpindlerBattery(Battery):
@@ -11,3 +11,4 @@ class SpindlerBattery(Battery):
 
         # 2 Years
         return (self.__current_date - self.__last_service_date).days > (365 * 2)
+    

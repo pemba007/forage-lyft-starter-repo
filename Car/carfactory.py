@@ -1,7 +1,12 @@
 from car import Car
 from datetime import date
-from engine import CapuletEngine, SternmanEngine, WilloughbyEngine
-from battery import NubbinBattery, SpindlerBattery
+
+from Car.engine.capulet_engine import CapuletEngine
+from Car.engine.sternman_engine import SternmanEngine
+from Car.engine.willoughby_engine import WilloughbyEngine
+
+from Car.battery.nubbin_battery import NubbinBattery
+from Car.battery.spindler_battery import SpindlerBattery
 
 class CarFactory:
     # def __init__(self):
@@ -10,7 +15,8 @@ class CarFactory:
     # Factory methods
 
     # Callipoe Car
-    def create_calliope(self, current_date: date, last_service_date: date, current_mileage: int, last_service_mileage: int) -> Car:
+    @staticmethod
+    def create_calliope(current_date: date, last_service_date: date, current_mileage: int, last_service_mileage: int) -> Car:
 
         # Capulet Engine & Spindler Battery
         engine = CapuletEngine(current_mileage=current_mileage, last_service_mileage=last_service_mileage)
@@ -19,7 +25,8 @@ class CarFactory:
         return Car(engine=engine, battery=battery)
     
     # Glissade Car
-    def create_glissade(self, current_date: date, last_service_date: date, current_mileage: int, last_service_mileage: int) -> Car:
+    @staticmethod
+    def create_glissade(current_date: date, last_service_date: date, current_mileage: int, last_service_mileage: int) -> Car:
         
         # Willoughby Engine & Spindler Battery
         engine = WilloughbyEngine(current_mileage= current_mileage, last_service_mileage= last_service_mileage)
@@ -28,7 +35,8 @@ class CarFactory:
         return Car(engine=engine, battery=battery)
 
     # Palindrome Car
-    def create_palindrome(self, current_date: date, last_service_date: date, warning_light_on: bool) -> Car:
+    @staticmethod
+    def create_palindrome(current_date: date, last_service_date: date, warning_light_on: bool) -> Car:
 
         # Sternman Engine & Spindler Battery
         engine = SternmanEngine(warning_light_is_on= warning_light_on)
@@ -36,7 +44,8 @@ class CarFactory:
         return Car(engine=engine, battery=battery)
     
     # Rorschach Car
-    def create_rorschach(self, current_date: date, last_service_date: date, current_mileage: int, last_service_mileage: int) -> Car:
+    @staticmethod
+    def create_rorschach(current_date: date, last_service_date: date, current_mileage: int, last_service_mileage: int) -> Car:
 
         # Willoughby Engine & Nubbin Battery
         engine = WilloughbyEngine(current_mileage= current_mileage, last_service_mileage= last_service_mileage)
@@ -45,7 +54,8 @@ class CarFactory:
         return Car(engine=engine, battery=battery)
 
     # Thovex Car
-    def create_thovex(self, current_date: date, last_service_date: date, current_mileage: int, last_service_mileage: int) -> Car:
+    @staticmethod
+    def create_thovex(current_date: date, last_service_date: date, current_mileage: int, last_service_mileage: int) -> Car:
 
         # Capulet Engine & Nubbin Battery
         engine = CapuletEngine(current_mileage= current_mileage, last_service_mileage= last_service_mileage)
