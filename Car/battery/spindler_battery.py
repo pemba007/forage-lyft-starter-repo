@@ -10,5 +10,5 @@ class SpindlerBattery(Battery):
     def needs_service(self):
 
         # 2 Years
-        return (self.__current_date - self.__last_service_date).days > (365 * 2)
+        return (self.__current_date - self.__last_service_date).days > (365 * 3)
     
